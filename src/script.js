@@ -1,38 +1,74 @@
-
-
 let now = new Date();
-let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 let month = months[now.getMonth()];
 let date = now.getDate();
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Sunday",
+];
 let day = days[now.getDay()];
 let hour = now.getHours();
 if (hour < 10) {
-    hour = `0${hour}`;
+  hour = `0${hour}`;
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-console.log(`Today is ${day}, ${date} ${month} ${hour}:${minutes}`);
 
+let h4 = document.querySelector("h4");
+h4.innerHTML = `${day}, ${date} ${month} ${hour}:${minutes}`;
 
 function showTemperature(response) {
-    console.log(response.data.main.temp);
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = Math.round(response.data.main.temp);
+
+  let weatherDescription = document.querySelector("#weather-description");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+
+  let currentCity = document.querySelector("#current-city");
+  currentCity.innerHTML = response.data.name;
+
+  let feelsLike = document.querySelector("#feels-like");
+  feelsLike.innerHTML = Math.round(response.data.main.feels_like);
+
+  let currentHumidity = document.querySelector("#current-humidity");
+  currentHumidity.innerHTML = response.data.main.humidity;
+
+  let currentWind = document.querySelector("#current-wind");
+  currentWind.innerHTML = Math.round(response.data.wind.speed);
 }
 
-
-function changeCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input");
-  let h3 = document.querySelector("h3");
-  h3.innerHTML = city.value;
-
+function search(city) {
   let apiKey = "690c1586235f5c036bd74a5466b0f1f4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(showTemperature);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input");
+  search(city.value);
+}
+
 let checkCity = document.querySelector("#search-form");
-checkCity.addEventListener("submit", changeCity);
+checkCity.addEventListener("submit", handleSubmit);

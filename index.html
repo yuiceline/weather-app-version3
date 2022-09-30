@@ -25,16 +25,15 @@
       <div class="weather-app">
         <div class="top-section">
           <div class="weather-today">
-            <h1>
-              20
-              <span>
-                <a href="" id="celcius-link" class="units-link">°C</a> |
-                <a href="" id="fahrenheit-link" class="units-link">°F</a>
-              </span>
-            </h1>
-            <h2>Clear sky</h2>
-            <h3>London</h3>
-            <h4>Saturday 29 Sept 10:15</h4>
+            <span id="current-temperature">20</span>
+            <span>
+              <a href="" id="celcius-link" class="units-link">°C</a> |
+              <a href="" id="fahrenheit-link" class="units-link">°F</a>
+            </span>
+
+            <h2 id="weather-description">Clear sky</h2>
+            <h3 id="current-city">London</h3>
+            <h4></h4>
           </div>
           <img
             src="https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -46,9 +45,9 @@
           <div class="col-3">
             <ul>
               <li class="section-title">Overview</li>
-              <li>Feels like: 18°C</li>
-              <li>Humidity: 50%</li>
-              <li>Windy: 2km/h</li>
+              <li>Feels like: <span id="feels-like">18</span>°C</li>
+              <li>Humidity: <span id="current-humidity">50</span>%</li>
+              <li>Wind: <span id="current-wind">2</span>km/h</li>
             </ul>
           </div>
           <div class="col-8">
