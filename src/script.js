@@ -39,6 +39,8 @@ h4.innerHTML = `${day}, ${date} ${month} ${hour}:${minutes}`;
 
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
+ 
+
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
 
   let weatherDescription = document.querySelector("#weather-description");
@@ -49,6 +51,12 @@ function showTemperature(response) {
 
   let feelsLike = document.querySelector("#feels-like");
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
+
+  let maxTemp = document.querySelector("#max-temp");
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+
+  let minTemp = document.querySelector("#min-temp");
+  minTemp.innerHTML = Math.round(response.data.main.temp_min);
 
   let currentHumidity = document.querySelector("#current-humidity");
   currentHumidity.innerHTML = response.data.main.humidity;
