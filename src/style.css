@@ -134,3 +134,13 @@ span {
 .col-7 {
   flex-grow: 1;
 }
+
+
+.weather-forecast-max {
+  font-size: 18px;
+}
+
+.weather-forecast-min {
+  font-size: 18px;
+  opacity: 0.6;
+}
