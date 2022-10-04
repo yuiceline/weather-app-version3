@@ -131,13 +131,32 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function showImage(response) {
+  
+  let cityImage = document.querySelector(".city-img");
+  let hits = response.data.hits[0].largeImageURL;
+  cityImage.innerHTML = `<img src=${hits} width="300px" class="pixabay-img">`;
+}
+
+function getImage(city) {
+  let imgApiKey = "30364853-d7b6bed8d79e1332ebe8e60cc";
+  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}&image_type=photo`;
+  console.log(imgApiUrl);
+  axios.get(imgApiUrl).then(showImage);
+}
+
+
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input");
+  let city = document.querySelector("#cityInput");
   search(city.value);
+  getImage(city.value);
+  
 }
 
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
+
 search("London");
+getImage("London");

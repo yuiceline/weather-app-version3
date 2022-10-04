@@ -153,3 +153,8 @@ span {
   margin: 10px;
   justify-content: space-between;
 }
+
+.pixabay-img {
+  border-radius: 8px;
+  margin: 20px;
+}
