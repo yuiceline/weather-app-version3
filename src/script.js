@@ -37,9 +37,34 @@ if (minutes < 10) {
 let h4 = document.querySelector("h4");
 h4.innerHTML = `${day}, ${date} ${month} ${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt=""
+                  width="42px"
+                />
+                <div class="weather-forecast-temp">
+                  <span class="weather-forecast-max">28</span>
+                  <span class="weather-forecast-min">24</span>
+                </div>
+              </div>
+              `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
- 
 
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
 
@@ -86,3 +111,6 @@ function handleSubmit(event) {
 
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
+
+search("London");
+displayForecast();
