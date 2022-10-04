@@ -17,7 +17,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   background: white;
-  padding-top: 5px;
+  padding: 5px;
 }
 
 .top-section {
@@ -80,11 +80,6 @@ h4 {
   font-size: 22px;
 }
 
-.row {
-  padding: 20px;
-  padding-top: 0;
-  justify-content: space-between;
-}
 
 .col-3 {
   border-radius: 8px;
@@ -114,7 +109,7 @@ li {
   margin-bottom: 20px;
 }
 span {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .col-8 {
@@ -153,3 +148,8 @@ span {
   opacity: 0.6;
 }
 
+.row {
+ 
+  margin: 10px;
+  justify-content: space-between;
+}
