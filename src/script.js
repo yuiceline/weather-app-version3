@@ -77,7 +77,6 @@ function displayForecast(response) {
               </div>
               `;
     }
-    
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -93,6 +92,9 @@ function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
 
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
+
+  celciusTemperature = response.data.main.temp;
+  
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
@@ -124,6 +126,8 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+
+
 function search(city) {
   let apiKey = "690c1586235f5c036bd74a5466b0f1f4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -132,7 +136,6 @@ function search(city) {
 }
 
 function showImage(response) {
-  
   let cityImage = document.querySelector(".city-img");
   let hits = response.data.hits[0].largeImageURL;
   cityImage.innerHTML = `<img src=${hits} width="300px" class="pixabay-img">`;
@@ -145,18 +148,43 @@ function getImage(city) {
   axios.get(imgApiUrl).then(showImage);
 }
 
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#cityInput");
   search(city.value);
   getImage(city.value);
-  
 }
 
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
+
+
+function convertToF(event) {
+  event.preventDefault();
+  let fahrenheit = (celciusTemperature * 9) / 5 + 32;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let currentFahrenheit = document.querySelector("#current-temperature");
+  currentFahrenheit.innerHTML = Math.round(fahrenheit);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToF);
+
+let celciusTemperature = null;
+console.log(celciusTemperature);
+
+function convertToC(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let currentCelcius = document.querySelector("#current-temperature");
+  currentCelcius.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToC);
 
 search("London");
 getImage("London");
