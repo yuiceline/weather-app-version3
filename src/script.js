@@ -89,12 +89,8 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
   let currentTemperature = document.querySelector("#current-temperature");
-
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
-
-  celciusTemperature = response.data.main.temp;
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
@@ -142,7 +138,6 @@ function showImage(response) {
 function getImage(city) {
   let imgApiKey = "30364853-d7b6bed8d79e1332ebe8e60cc";
   let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}&image_type=photo`;
-  console.log(imgApiUrl);
   axios.get(imgApiUrl).then(showImage);
 }
 
@@ -156,42 +151,15 @@ function handleSubmit(event) {
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
-function convertToF(event) {
-  event.preventDefault();
-  let fahrenheit = (celciusTemperature * 9) / 5 + 32;
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let currentFahrenheit = document.querySelector("#current-temperature");
-  currentFahrenheit.innerHTML = Math.round(fahrenheit);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToF);
-
-let celciusTemperature = null;
-console.log(celciusTemperature);
-
-function convertToC(event) {
-  event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let currentCelcius = document.querySelector("#current-temperature");
-  currentCelcius.innerHTML = Math.round(celciusTemperature);
-}
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", convertToC);
-
 search("London");
 getImage("London");
 
 function changeColor() {
   let hour = now.getHours();
 
-  if ( hour > 6 && hour < 18) {
+  if (hour > 6 && hour < 18) {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("#weather-app").style.backgroundColor = "#C8E4FC";
-   
     document.querySelector("#top-section").style.backgroundColor = "#F7FAFB";
     document.querySelector("#box-overview").style.backgroundColor = "#F7FAFB";
     document.querySelector("#box-forecast").style.backgroundColor = "#F7FAFB";
@@ -206,7 +174,6 @@ function changeColor() {
     document.querySelector("#weather-app").style.color = "#f5f5f5";
     document.querySelector("body").style.color = "#f5f5f5";
     document.querySelector(".form-control").style.backgroundColor = "#343B5E";
-    
   }
 }
 changeColor();
