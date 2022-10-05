@@ -1,7 +1,10 @@
+
+html {
+  height: 100%;
+}
 body {
-  background: #f9f7fe;
   font-family: "Josefin Sans", sans-serif;
-  background: url("https://images.unsplash.com/photo-1505533542167-8c89838bb19e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+  color: #24292D;
   text-transform: capitalize;
   margin: 0 auto;
 }
@@ -36,11 +39,13 @@ body {
 .pixabay-img {
   border-radius: 8px;
   margin: 20px;
+  
 }
 #weather-icon {
   width: 70px;
   margin: 0;
   padding: 0;
+  filter: drop-shadow(2px 2px 2px rgb(66, 66, 66))
 }
 
 .weather-today {
@@ -120,6 +125,10 @@ span {
 .forecast-title {
   font-size: 18px;
   font-weight: bold;
+}
+
+.forecast-icon {
+  filter: drop-shadow(2px 2px 2px rgb(66, 66, 66));
 }
 
 .form-control {

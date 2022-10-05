@@ -64,7 +64,7 @@ function displayForecast(response) {
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
-                  width="42px"
+                  width="42px" class="forecast-icon"
                 />
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-max">${Math.round(
@@ -89,12 +89,12 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+  console.log(response.data);
   let currentTemperature = document.querySelector("#current-temperature");
 
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
 
   celciusTemperature = response.data.main.temp;
-  
 
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.weather[0].description;
@@ -126,8 +126,6 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-
-
 function search(city) {
   let apiKey = "690c1586235f5c036bd74a5466b0f1f4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -158,8 +156,6 @@ function handleSubmit(event) {
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
-
-
 function convertToF(event) {
   event.preventDefault();
   let fahrenheit = (celciusTemperature * 9) / 5 + 32;
@@ -188,3 +184,27 @@ celciusLink.addEventListener("click", convertToC);
 
 search("London");
 getImage("London");
+
+function hourAlert() {
+  let hour = now.getHours();
+
+  if (hour < 19) {
+    document.querySelector("body").style.background =
+      "linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%)";
+    document.querySelector("#weather-app").style.backgroundColor = "#fafafa";
+    document.querySelector("#top-section").style.backgroundColor = "#f5f5f5";
+    document.querySelector("#box-overview").style.backgroundColor = "#f5f5f5";
+    document.querySelector("#box-forecast").style.backgroundColor = "#f5f5f5";
+    document.querySelector("#weather-app").style.color = "#000";
+    document.querySelector("body").style.color = "#000";
+  } else {
+    document.querySelector("body").style.backgroundColor = "#1f2933";
+    document.querySelector("#weather-app").style.backgroundColor = "#323f4b";
+    document.querySelector("#top-section").style.backgroundColor = "#616e7c";
+    document.querySelector("#box-overview").style.backgroundColor = "#616e7c";
+    document.querySelector("#box-forecast").style.backgroundColor = "#616e7c";
+    document.querySelector("#weather-app").style.color = "#f5f5f5";
+    document.querySelector("body").style.color = "#f5f5f5";
+  }
+}
+hourAlert();
