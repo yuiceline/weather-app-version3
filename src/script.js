@@ -69,10 +69,10 @@ function displayForecast(response) {
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-max">${Math.round(
                     forecastDay.temp.max
-                  )}</span>
+                  )}°</span>
                   <span class="weather-forecast-min">${Math.round(
                     forecastDay.temp.min
-                  )}</span>
+                  )}°</span>
                 </div>
               </div>
               `;
@@ -188,27 +188,24 @@ getImage("London");
 function changeColor() {
   let hour = now.getHours();
 
-  if (hour < 21) {
-    document.querySelector("body").style.background =
-      "linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%)";
-    document.querySelector("#weather-app").style.backgroundColor = "#E5F1F9";
+  if ( hour > 6 && hour < 18) {
+    document.querySelector("body").style.backgroundColor = "#fff";
+    document.querySelector("#weather-app").style.backgroundColor = "#C8E4FC";
    
-    document.querySelector("#top-section").style.backgroundColor = "#f5f5f5";
-    document.querySelector("#box-overview").style.backgroundColor = "#f5f5f5";
-    document.querySelector("#box-forecast").style.backgroundColor = "#f5f5f5";
+    document.querySelector("#top-section").style.backgroundColor = "#F7FAFB";
+    document.querySelector("#box-overview").style.backgroundColor = "#F7FAFB";
+    document.querySelector("#box-forecast").style.backgroundColor = "#F7FAFB";
     document.querySelector("#weather-app").style.color = "#000";
     document.querySelector("body").style.color = "#000";
   } else {
-    document.querySelector("body").style.backgroundColor = "#1f2933";
-    document.querySelector("#weather-app").style.backgroundColor = "#323f4b";
-   
-    document.querySelector("#top-section").style.backgroundColor = "#8894a2";
-    document.querySelector("#box-overview").style.backgroundColor = "#8894a2";
-    document.querySelector("#box-forecast").style.backgroundColor = "#8894a2";
+    document.querySelector("body").style.background = "#141522";
+    document.querySelector("#weather-app").style.backgroundColor = "#22233A";
+    document.querySelector("#top-section").style.backgroundColor = "#343B5E";
+    document.querySelector("#box-overview").style.backgroundColor = "#343B5E";
+    document.querySelector("#box-forecast").style.backgroundColor = "#343B5E";
     document.querySelector("#weather-app").style.color = "#f5f5f5";
     document.querySelector("body").style.color = "#f5f5f5";
-    document.querySelector(".form-control").style.backgroundColor = "#8894a2";
-    document.querySelector("::placeholder").style.setProperty('color', '#f5f5f5', '!important');
+    document.querySelector(".form-control").style.backgroundColor = "#343B5E";
     
   }
 }
