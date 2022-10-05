@@ -29,7 +29,6 @@ body {
   padding-bottom: 20px;
   margin: 20px;
   align-items: center;
-  background: #fff;
 }
 
 .pixabay-img {
@@ -74,7 +73,6 @@ h4 {
   padding: 5px;
   padding-bottom: 0px;
   margin: 10px;
-  background: #fff;
 }
 
 ul {
@@ -112,23 +110,10 @@ span {
   padding-bottom: 0px;
   margin-left: 10px;
   margin: 10px;
-  background: #fff;
 }
 
 .forecast-icon {
   filter: drop-shadow(2px 2px 2px rgb(66, 66, 66));
-}
-
-.form-control {
-  margin: 0 auto;
-  border: 1px solid rgba(52, 40, 79, 0.09);
-}
-input::placeholder {
-  color: #d1d0d0 !important;
-}
-
-.col-7 {
-  flex-grow: 1;
 }
 
 .weather-forecast-max {
@@ -143,4 +128,34 @@ input::placeholder {
 .row {
   margin: 10px;
   justify-content: space-between;
+}
+.col-7 {
+  flex-grow: 1;
+}
+
+.form-control {
+  margin: 0 auto;
+  border: 1px solid rgba(52, 40, 79, 0.09);
+}
+input::placeholder {
+  color: #d1d0d0 !important;
+}
+
+.btn {
+  background: #4d5084;
+  border: transparent;
+}
+
+.btn:hover {
+  background: #4d5084 !important;
+  opacity: 0.5;
+}
+
+small a {
+  color: #5b5e96;
+}
+
+small a:hover {
+  color: #4d5084;
+  opacity: 0.5;
 }
