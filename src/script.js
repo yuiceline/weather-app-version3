@@ -160,12 +160,13 @@ getImage("London");
 function changeColor() {
   let hour = now.getHours();
 
-  if (hour > 6 && hour < 14) {
+  if (hour > 6 && hour < 19) {
     document.querySelector("body").style.backgroundColor = "#fff";
-    document.querySelector("#weather-app").style.backgroundColor = "#C8E4FC";
-    document.querySelector("#top-section").style.backgroundColor = "#";
-    document.querySelector("#box-overview").style.backgroundColor = "#C8E4FC";
-    document.querySelector("#box-forecast").style.backgroundColor = "#C8E4FC";
+    document.querySelector("#weather-app").style.backgroundColor = "#deeffd";
+    document.querySelector("#top-section").style.backgroundColor = "#c1e0fc";
+    document.querySelector("#box-overview").style.backgroundColor = "#c1e0fc";
+    document.querySelector("#box-forecast").style.backgroundColor = "#c1e0fc";
+    document.querySelector(".btn").style.backgroundColor = "#74BAF7";
     document.querySelector("#weather-app").style.color = "#000";
     document.querySelector("body").style.color = "#000";
   } else {
@@ -178,6 +179,7 @@ function changeColor() {
     document.querySelector("#weather-app").style.color = "#f5f5f5";
     document.querySelector("body").style.color = "#f5f5f5";
     document.querySelector(".form-control").style.backgroundColor = "#31364f";
+    document.querySelector(".btn").style.backgroundColor = "#6164a3";
   }
 }
 changeColor();
