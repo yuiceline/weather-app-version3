@@ -101,6 +101,9 @@ function showTemperature(response) {
   let feelsLike = document.querySelector("#feels-like");
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
 
+  let cloudiness = document.querySelector("#cloudiness");
+  cloudiness.innerHTML = response.data.clouds.all;
+
   let maxTemp = document.querySelector("#max-temp");
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
 
@@ -132,7 +135,7 @@ function search(city) {
 function showImage(response) {
   let cityImage = document.querySelector(".city-img");
   let hits = response.data.hits[0].largeImageURL;
-  cityImage.innerHTML = `<img src=${hits} width="300px" class="pixabay-img">`;
+  cityImage.innerHTML = `<img src=${hits} width="230px" class="pixabay-img">`;
 }
 
 function getImage(city) {
@@ -157,23 +160,24 @@ getImage("London");
 function changeColor() {
   let hour = now.getHours();
 
-  if (hour > 6 && hour < 18) {
+  if (hour > 6 && hour < 14) {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("#weather-app").style.backgroundColor = "#C8E4FC";
-    document.querySelector("#top-section").style.backgroundColor = "#F7FAFB";
-    document.querySelector("#box-overview").style.backgroundColor = "#F7FAFB";
-    document.querySelector("#box-forecast").style.backgroundColor = "#F7FAFB";
+    document.querySelector("#top-section").style.backgroundColor = "#";
+    document.querySelector("#box-overview").style.backgroundColor = "#C8E4FC";
+    document.querySelector("#box-forecast").style.backgroundColor = "#C8E4FC";
     document.querySelector("#weather-app").style.color = "#000";
     document.querySelector("body").style.color = "#000";
   } else {
-    document.querySelector("body").style.background = "#141522";
-    document.querySelector("#weather-app").style.backgroundColor = "#22233A";
-    document.querySelector("#top-section").style.backgroundColor = "#343B5E";
-    document.querySelector("#box-overview").style.backgroundColor = "#343B5E";
-    document.querySelector("#box-forecast").style.backgroundColor = "#343B5E";
+    document.querySelector("body").style.background =
+      "radial-gradient(circle at -4% -12.9%, rgb(74, 98, 110) 0.3%, rgb(30, 33, 48) 90.2%";
+    document.querySelector("#weather-app").style.backgroundColor = "#242B39";
+    document.querySelector("#top-section").style.backgroundColor = "#31364f";
+    document.querySelector("#box-overview").style.backgroundColor = "#31364f";
+    document.querySelector("#box-forecast").style.backgroundColor = "#31364f";
     document.querySelector("#weather-app").style.color = "#f5f5f5";
     document.querySelector("body").style.color = "#f5f5f5";
-    document.querySelector(".form-control").style.backgroundColor = "#343B5E";
+    document.querySelector(".form-control").style.backgroundColor = "#31364f";
   }
 }
 changeColor();
