@@ -129,7 +129,7 @@ function showImage(response) {
 
 function getImage(city) {
   let imgApiKey = "30364853-d7b6bed8d79e1332ebe8e60cc";
-  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}+city+landscape&image_type=photo`;
+  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}+city&image_type=photo`;
   axios.get(imgApiUrl).then(showImage);
 }
 
@@ -143,8 +143,8 @@ function handleSubmit(event) {
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
-search("London");
-getImage("London");
+search("Cotswolds");
+getImage("Cotswolds");
 
 function changeColor() {
   let now = new Date();
