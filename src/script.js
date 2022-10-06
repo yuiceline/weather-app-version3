@@ -135,12 +135,12 @@ function search(city) {
 function showImage(response) {
   let cityImage = document.querySelector(".city-img");
   let hits = response.data.hits[0].largeImageURL;
-  cityImage.innerHTML = `<img src=${hits} width="230px" class="pixabay-img">`;
+  cityImage.innerHTML = `<img src=${hits} width="230px" height="200px" class="pixabay-img">`;
 }
 
 function getImage(city) {
   let imgApiKey = "30364853-d7b6bed8d79e1332ebe8e60cc";
-  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}&image_type=photo`;
+  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}+city+landscape&image_type=photo`;
   axios.get(imgApiUrl).then(showImage);
 }
 

@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Vollkorn", serif;
   color: #24292d;
   text-transform: capitalize;
   margin: 0 auto;
@@ -18,7 +18,6 @@ body {
   margin: 0 auto;
   border-radius: 8px;
   padding: 5px;
-  
 }
 
 .top-section {
@@ -66,7 +65,6 @@ h1 {
   margin-bottom: 0;
 }
 
-
 h2 {
   font-size: 18px;
 }
@@ -79,7 +77,8 @@ h4 {
   font-size: 18px;
 }
 
-.box-overview, .box-forecast {
+.box-overview,
+.box-forecast {
   border-radius: 8px;
   padding: 10px;
   padding-bottom: 10px;
@@ -108,7 +107,6 @@ li {
   padding: 10px;
   padding-bottom: 5px;
 }
-
 
 span {
   font-size: 18px;
@@ -143,7 +141,6 @@ span {
 .form-control {
   margin: 0px 5px 10px 10px auto;
   border: 1px solid rgba(52, 40, 79, 0.09);
-  
 }
 input::placeholder {
   color: #d1d0d0 !important;
@@ -157,7 +154,6 @@ input::placeholder {
 
 .btn:hover {
   opacity: 0.5;
-
 }
 
 form .col-2 {
