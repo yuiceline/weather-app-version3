@@ -1,41 +1,27 @@
-let now = new Date();
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Sunday",
-];
-let day = days[now.getDay()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let h4 = document.querySelector("h4");
-h4.innerHTML = `${day}, ${date} ${month} ${hour}:${minutes}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Sunday",
+  ];
+  let day = days[date.getDay()];
+
+  return `${day} ${hours}:${minutes}`;
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -89,6 +75,9 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+  let date = document.querySelector("#date");
+  date.innerHTML = formatDate(response.data.dt * 1000);
+
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
 
@@ -158,6 +147,7 @@ search("London");
 getImage("London");
 
 function changeColor() {
+  let now = new Date();
   let hour = now.getHours();
 
   if (hour > 6 && hour < 19) {
