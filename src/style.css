@@ -3,21 +3,23 @@ html {
 }
 body {
   font-family: "Vollkorn", serif;
-  color: #24292d;
+  color: #1b1811;
   text-transform: capitalize;
   margin: 0 auto;
 }
 
 .container {
-  max-width: 530px;
+  max-width: 520px;
   margin: 40px auto;
 }
 
 .weather-app {
-  max-width: 530px;
+  max-width: 520px;
   margin: 0 auto;
   border-radius: 8px;
   padding: 5px;
+
+
 }
 
 .top-section {
@@ -163,6 +165,11 @@ input::placeholder {
 
 form .col-2 {
   padding: 0 0 12px 0;
+}
+
+small {
+  display: block;
+  margin-bottom: 10px;
 }
 
 small a {
