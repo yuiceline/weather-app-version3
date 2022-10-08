@@ -9,17 +9,15 @@ body {
 }
 
 .container {
-  max-width: 520px;
+  max-width: 500px;
   margin: 40px auto;
 }
 
 .weather-app {
-  max-width: 520px;
+  max-width: 500px;
   margin: 0 auto;
   border-radius: 8px;
   padding: 5px;
-
-
 }
 
 .top-section {
@@ -62,7 +60,7 @@ body {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 32px;
   padding-top: 20px;
   margin-bottom: 0;
 }
@@ -83,7 +81,6 @@ h4 {
   font-size: 14px;
 }
 
-
 .box-overview,
 .box-forecast {
   border-radius: 8px;
@@ -95,6 +92,7 @@ h4 {
 .box-overview .col-4 {
   flex-grow: 1;
   justify-content: space-between;
+  padding: 9px;
 }
 
 ul {
@@ -117,6 +115,7 @@ li {
 
 span {
   font-size: 18px;
+  font-weight: bold;
 }
 
 .fivedays-forecast .col-2 {

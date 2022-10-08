@@ -150,22 +150,21 @@ function changeColor() {
   let now = new Date();
   let hour = now.getHours();
 
-  if (hour > 6 && hour < 12) {
+  if (hour > 6 && hour < 18) {
     document.querySelector("body").style.backgroundColor = "#fff";
-    document.querySelector("#weather-app").style.backgroundImage = "url('media/morning-background.jpg')";
+    document.querySelector("#weather-app").style.backgroundImage =
+      "url('media/daytime-background.jpg')";
     document.querySelector("#top-section").style.background =
-      "hsl(210,39%,80%, .5)";
+      "hsl(210, 54%, 72%, .5)";
     document.querySelector("#box-overview").style.background =
-      "hsl(210,39%,80%, .5)";
+      "hsl(210, 54%, 72%, .5)";
     document.querySelector("#box-forecast").style.background =
-      "hsl(210,39%,80%, .5)";
+      "hsl(210, 54%, 72%, .5)";
     document.querySelector(".btn").style.backgroundColor = "#74BAF7";
-    document.querySelector("#weather-app").style.color = "#000";
-    document.querySelector("body").style.color = "#000";
+    document.querySelector("#weather-app").style.color = "#1b1811";
   } else {
-    // document.querySelector("body").style.background =
-    //   // "radial-gradient(circle at -4% -12.9%, rgb(74, 98, 110) 0.3%, rgb(30, 33, 48) 90.2%";
-      document.querySelector("#weather-app").style.background = "url('media/night-background.jpg')"
+    document.querySelector("#weather-app").style.background =
+      "url('media/night-background.jpg')";
     document.querySelector("#top-section").style.background =
       "hsla(230, 23%, 25%, .5)";
     document.querySelector("#box-overview").style.background =
@@ -173,7 +172,6 @@ function changeColor() {
     document.querySelector("#box-forecast").style.background =
       "hsla(230, 23%, 25%, .5)";
     document.querySelector("#weather-app").style.color = "#f5f5f5";
-    document.querySelector("body").style.color = "#1b1811";
     document.querySelector(".form-control").style.backgroundColor =
       "hsla(230, 23%, 25%, .5)";
     document.querySelector(".btn").style.backgroundColor = "#6164a3";
