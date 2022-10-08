@@ -160,7 +160,7 @@ function changeColor() {
       "hsl(210, 54%, 72%, .5)";
     document.querySelector("#box-forecast").style.background =
       "hsl(210, 54%, 72%, .5)";
-    document.querySelector(".btn").style.backgroundColor = "#74BAF7";
+    document.querySelector(".btn").style.backgroundColor = "#4E80B1";
     document.querySelector("#weather-app").style.color = "#1b1811";
   } else {
     document.querySelector("#weather-app").style.background =
