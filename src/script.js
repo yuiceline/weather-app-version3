@@ -153,7 +153,7 @@ function changeColor() {
   if (hour > 6 && hour < 18) {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("#weather-app").style.backgroundImage =
-      "url('media/daytime-background.jpg')";
+      "url('media/morning-background.jpg')";
     document.querySelector("#top-section").style.background =
       "hsl(210, 54%, 72%, .5)";
     document.querySelector("#box-overview").style.background =
