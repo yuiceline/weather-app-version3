@@ -124,7 +124,7 @@ function search(city) {
 function showImage(response) {
   let cityImage = document.querySelector(".city-img");
   let hits = response.data.hits[0].largeImageURL;
-  cityImage.innerHTML = `<img src=${hits} width="230px" height="200px" class="pixabay-img">`;
+  cityImage.innerHTML = `<img src=${hits} width="220px" height="200px" class="pixabay-img">`;
 }
 
 function getImage(city) {
