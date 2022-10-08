@@ -143,8 +143,8 @@ function handleSubmit(event) {
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
-search("London");
-getImage("London");
+search("Barcelona");
+getImage("Barcelona");
 
 function changeColor() {
   let now = new Date();
