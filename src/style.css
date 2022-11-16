@@ -86,6 +86,11 @@ h4 {
   padding: 10px;
   padding-bottom: 10px;
   margin: 10px;
+
+}
+
+.top-section, .box-forecast, .box-overview {
+  opacity: 0.8;
 }
 
 .box-overview .col-4 {
@@ -127,11 +132,6 @@ span {
 
 .weather-forecast-max {
   font-size: 16px;
-}
-
-.weather-forecast-min {
-  font-size: 16px;
-  opacity: 0.6;
 }
 
 .row {
