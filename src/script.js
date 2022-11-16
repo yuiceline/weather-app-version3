@@ -121,30 +121,17 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function showImage(response) {
-  let cityImage = document.querySelector(".city-img");
-  let hits = response.data.hits[0].largeImageURL;
-  cityImage.innerHTML = `<img src=${hits} width="280px" height="150px" class="pixabay-img">`;
-}
-
-function getImage(city) {
-  let imgApiKey = "30364853-d7b6bed8d79e1332ebe8e60cc";
-  let imgApiUrl = `https://pixabay.com/api/?key=${imgApiKey}&q=${city}+city&image_type=photo`;
-  axios.get(imgApiUrl).then(showImage);
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#cityInput");
   search(city.value);
-  getImage(city.value);
 }
 
 let checkCity = document.querySelector("#search-form");
 checkCity.addEventListener("submit", handleSubmit);
 
 search("New York");
-getImage("New York");
+
 
 function changeColor() {
   let now = new Date();

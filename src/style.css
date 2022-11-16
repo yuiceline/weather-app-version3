@@ -33,13 +33,6 @@ body {
   padding-bottom: 10px;
 }
 
-.pixabay-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  border-radius: 4px;
- 
-}
 
 .currenttemp_icon {
   text-align: center;
