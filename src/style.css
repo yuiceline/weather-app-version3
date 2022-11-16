@@ -20,23 +20,29 @@ body {
   padding: 5px;
 }
 
+.top-section,
+.box-forecast,
+.box-overview {
+  opacity: 0.9;
+}
+
 .top-section {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
   border-radius: 8px;
   align-items: center;
   margin: 10px;
+  padding-bottom: 10px;
 }
 
 .pixabay-img {
-  border-radius: 8px;
-  margin-right: 10px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+ 
 }
 
 .currenttemp_icon {
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 #weather-icon {
@@ -58,14 +64,16 @@ body {
   margin: 10px;
 }
 
-h1 {
-  font-size: 32px;
+#current-city {
+  font-size: 40px;
   padding-top: 20px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 28px;
+  text-align: center;
 }
 
 h3 {
@@ -74,6 +82,7 @@ h3 {
 
 h4 {
   font-size: 18px;
+  text-align: center;
 }
 
 .updated-title {
@@ -86,11 +95,6 @@ h4 {
   padding: 10px;
   padding-bottom: 10px;
   margin: 10px;
-
-}
-
-.top-section, .box-forecast, .box-overview {
-  opacity: 0.8;
 }
 
 .box-overview .col-4 {
@@ -111,10 +115,11 @@ li {
 
 .section-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 15px;
   padding: 10px;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 span {

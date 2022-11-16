@@ -124,7 +124,7 @@ function search(city) {
 function showImage(response) {
   let cityImage = document.querySelector(".city-img");
   let hits = response.data.hits[0].largeImageURL;
-  cityImage.innerHTML = `<img src=${hits} width="220px" height="180px" class="pixabay-img">`;
+  cityImage.innerHTML = `<img src=${hits} width="280px" height="150px" class="pixabay-img">`;
 }
 
 function getImage(city) {
@@ -153,7 +153,7 @@ function changeColor() {
   if (hour > 6 && hour < 18) {
     document.querySelector("body").style.backgroundColor = "#fff";
     document.querySelector("#weather-app").style.backgroundImage =
-      "url('media/morning-background.jpg')";
+      "url('media/clouds.jpg')";
     document.querySelector("#top-section").style.background =
       "hsl(210, 54%, 72%, .5)";
     document.querySelector("#box-overview").style.background =

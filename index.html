@@ -23,11 +23,12 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="weather-app" id="weather-app">
         <div class="top-section" id="top-section">
           <div class="weather-today">
-            <h1 id="current-city"> <span id="country"></span></h1>
+            <h1 id="current-city" class="section-title"> <span id="country"></span></h1>
+    
             <div class="currenttemp_icon">
               <img
                 src="https://openweathermap.org/img/wn/04d@2x.png"
@@ -42,8 +43,9 @@
 
             <h4> <span class="updated-title">Last updated :</span> <span id="date"></span></h4>
           </div>
-          <div class="city-img"></div>
+           <div class="city-img"></div>
         </div>
+        
 
         <div class="box-overview" id="box-overview">
           <p class="section-title">Overview</p>
@@ -107,7 +109,7 @@
         Credits: <br>
         City images @
         <a href="https://pixabay.com/">Pixabay</a> <br>
-        Day-time background image @ <a href="https://unsplash.com/@abyanathif?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Abyan Athif</a>
+        Day-time background image @ <a href="https://pixabay.com/ja/users/klickblick-8872450/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4215608">Elisa</a>
    <br>
         Night-time background image @ <a href="https://unsplash.com/@kazuend?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">kazuend</a>
       </small>
@@ -115,5 +117,3 @@
     <script src="src/script.js"></script>
   </body>
 </html>
-
-
